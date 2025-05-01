@@ -1,0 +1,5 @@
+# Ignorar todos los CSV excepto los necesarios
+src/data/*.csv
+!src/data/Penetracion_hogares_limpio.csv
+!src/data/Velocidad_por_provincia_limpio.csv
+!src/data/Accesos_tecnologia_localidad_limpio.csv
