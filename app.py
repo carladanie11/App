@@ -34,11 +34,11 @@ if seccion == "Inicio":
     st.write("Bienvenido al análisis interactivo del sector de telecomunicaciones en Argentina.")
     st.write("Selecciona una sección en la barra lateral para explorar los datos.")
 elif seccion == "Penetración del Servicio":
-    import pages.penetration as penetration
+    import src.pages.penetration as penetration
     penetration.show()
 elif seccion == "Calidad y Velocidad":
-    import pages.quality as quality
+    import src.pages.quality as quality
     quality.show()
 elif seccion == "Tecnologías de Conexión":
-    import pages.technologies as technologies
+    import src.pages.technologies as technologies
     technologies.show()
