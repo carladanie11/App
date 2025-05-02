@@ -1,3 +1,5 @@
+
+'''
 import streamlit as st
 
 # Configuración de la página
@@ -41,3 +43,35 @@ elif seccion == "Calidad y Velocidad":
 elif seccion == "Tecnologías de Conexión":
     import pages.technologies as technologies
     technologies.show()
+    '''
+    
+import streamlit as st
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Title of the app
+st.title('Weather Analytical Board')
+
+# Sidebar for user input
+st.sidebar.header('User Input')
+city = st.sidebar.text_input('Enter city name', 'New York')
+
+# Simulating weather data for demonstration
+np.random.seed(0)
+dates = pd.date_range('20220101', periods=10)
+temps = np.random.randint(50, 100, size=10)
+weather_data = pd.DataFrame({'Date': dates, 'Temperature': temps})
+
+# Display user input and weather data
+st.write('Analyzing weather data for', city)
+st.write(weather_data)
+
+# Line chart for temperature trends
+st.write('### Temperature Trend Chart')
+fig, ax = plt.subplots()
+ax.plot(weather_data['Date'], weather_data['Temperature'])
+ax.set_xlabel('Date')
+ax.set_ylabel('Temperature')
+ax.set_title('Temperature Trend')
+st.pyplot(fig)
